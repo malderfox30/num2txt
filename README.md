@@ -21,7 +21,7 @@ import num2txt from 'num2txt'
 
 num2txt('32') // ba mươi hai
 num2txt('32', { lang: 'en' }) // thirty three
-num2txt('32000', { lang: 'vi', currencyUnit: Đồng }) // ba mươi hai nghìn đồng
+num2txt('32000', { lang: 'vi', currencyUnit: 'đồng' }) // ba mươi hai nghìn đồng
 
 ```
 
