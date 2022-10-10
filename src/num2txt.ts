@@ -35,7 +35,7 @@ export function num2txt(value: string, options = defaultOptions) {
         }
       }
   }
-  if (options?.isCurrency) {
+  if (options?.currencyUnit) {
     outputString += options?.currencyUnit;
   }
   return outputString;
