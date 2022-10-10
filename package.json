@@ -1,6 +1,6 @@
 {
   "name": "num2txt",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Converts numbers to Vietnamese or English text with options to customize the output.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hebertcisco/ts-npm-package-boilerplate.git"
+    "url": "git+https://github.com/malderfox30/num2txt.git"
   },
   "keywords": [
     "numbers",
@@ -28,9 +28,9 @@
   "author": "Phat Nguyen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hebertcisco/ts-npm-package-boilerplate/issues"
+    "url": "https://github.com/malderfox30/num2txt/issues"
   },
-  "homepage": "https://github.com/hebertcisco/ts-npm-package-boilerplate#readme",
+  "homepage": "https://github.com/malderfox30/num2txt#readme",
   "devDependencies": {
     "@types/jest": "29.0.3",
     "@typescript-eslint/eslint-plugin": "5.38.0",
