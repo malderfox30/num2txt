@@ -18,12 +18,12 @@ export function tripletToVie(triplet: number, index: number) {
   let t = 100;
   let n = 0;
   let previousN = n;
-  if (currentTriplet < 10) {
-      if (index > 0 && n > 0) string += 'không trăm lẻ '
+  if (currentTriplet < 10 && currentTriplet > 0) {
+      if (index > 0) string += 'không trăm linh '
       string += unitNumbers[triplet];
       isLessThanTen = true;
   }
-  else if (currentTriplet < 100 && index > 0 && n > 0) {
+  else if (currentTriplet < 100 && index > 0 && currentTriplet > 0) {
       string += 'không trăm '
   }
   while (currentTriplet >= 1 && isLessThanTen === false) {

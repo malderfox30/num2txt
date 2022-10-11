@@ -2,9 +2,9 @@ import { defaultOptions } from "./configs";
 import { tripletToEng } from "./helpers/tripletToEng";
 import { tripletToVie } from "./helpers/tripletToVie";
 
-const suffixes = ['tỷ tỷ ', 'triệu tỷ ', 'nghìn tỷ ', 'tỷ ', 'triệu ', 'nghìn ', ''];
+const suffixes = ['', 'nghìn ', 'triệu ', 'tỷ ', 'nghìn tỷ ', 'triệu tỷ ', 'tỷ tỷ '];
 
-const suffixesEng = ['quintillion ', 'quadrillion ', 'trillion ', 'billion ', 'million ', 'thousand ', ''];
+const suffixesEng = ['', 'thousand ', 'million ', 'billion ', 'trillion ', 'quadrillion ', 'quintillion '];
 
 export function num2txt(value: string, options = defaultOptions) {
   const triplets = [0, 0, 0, 0, 0, 0, 0];
@@ -19,20 +19,24 @@ export function num2txt(value: string, options = defaultOptions) {
       number = Math.floor(number / 1000);
   }
   triplets.reverse();
-  for (const [index, triplet] of triplets.entries()) {
+  suffixes.reverse();
+  suffixesEng.reverse();
+  for (const [tIndex, triplet] of triplets.entries()) {
     if(options?.lang === 'vi') {
-      outputString += tripletToVie(triplet, index);
+      outputString += tripletToVie(triplet, Math.abs(7 - tIndex - index));
       if (triplet != 0) {
-        outputString += suffixes[index];
+        outputString += suffixes[tIndex];
       }
     }
     else {
       outputString += tripletToEng(triplet);
       if (triplet != 0) {
-          outputString += suffixesEng[index];
+          outputString += suffixesEng[tIndex];
       }
     }
   }
+  suffixes.reverse();
+  suffixesEng.reverse();
   if (options?.currencyUnit) {
     outputString += options?.currencyUnit;
   }
