@@ -1,6 +1,6 @@
 {
   "name": "num2txt",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Converts numbers to Vietnamese or English text with currency unit options to customize the output.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
