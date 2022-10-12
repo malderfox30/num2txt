@@ -1,3 +1,4 @@
+import { TRIPLET_MAX_LENGTH } from './../num2txt';
 const unitNumbers = [
   '',
   'one ',
@@ -34,12 +35,15 @@ const tens = [
   'ninety ',
 ];
 
-export function tripletToEng(triplet: number) {
+export function tripletToEng(triplet: number, index: number, isMoreThanAThousand: boolean) {
   let currentTriplet = triplet;
   let string = '';
   let isLessThanTwenty = false;
   let t = 100;
   let n = 0;
+  if (index >= TRIPLET_MAX_LENGTH - 1 && isMoreThanAThousand) {
+    string += 'and ';
+  }
   if (currentTriplet < 20) {
       string += unitNumbers[triplet];
       isLessThanTwenty = true;
@@ -47,7 +51,7 @@ export function tripletToEng(triplet: number) {
   while (currentTriplet >= 1 && isLessThanTwenty === false) {
       n = Math.floor(currentTriplet / t);
       if (n > 0 && t === 100) {
-          string += unitNumbers[n] + 'hundred' + (n === 1 ? ' ' : 's ')
+          string += unitNumbers[n] + 'hundred';
       }
       if (t == 10) {
           if (currentTriplet < 20) {

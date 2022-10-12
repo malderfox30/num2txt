@@ -28,4 +28,32 @@ describe('num2txt tests', () => {
   test('should return value correctly 7', () => {
     expect(num2txt('1001002')).toBe('Một triệu không trăm linh một nghìn không trăm linh hai');
   });
+
+  test('should return value correctly 8', () => {
+    expect(num2txt('1001002', { commaSeparator: true })).toBe('Một triệu, không trăm linh một nghìn, không trăm linh hai');
+  });
+
+  test('should return value correctly 9', () => {
+    expect(num2txt('-1001002')).toBe('Âm một triệu không trăm linh một nghìn không trăm linh hai');
+  });
+
+  test('should return value correctly 10', () => {
+    expect(num2txt('-1001012', { lang: 'en' })).toBe('Negative one million one thousand and twelve');
+  });
+
+  test('should return value correctly 11', () => {
+    expect(num2txt('3031', { lang: 'en' })).toBe('Three thousand and thirty one');
+  });
+
+  test('should return value correctly 12', () => {
+    expect(num2txt('87654321', { lang: 'vi', commaSeparator: true })).toBe('Tám mươi bảy triệu, sáu trăm năm mươi tư nghìn, ba trăm hai mươi mốt');
+  });
+
+  test('should return value correctly 13', () => {
+    expect(num2txt('32000', { lang: 'vi', textTransform: 'capitalizeWords' })).toBe('Ba Mươi Hai Nghìn');
+  });
+
+  test('should return value correctly 14', () => {
+    expect(num2txt('32001', { lang: 'en', textTransform: 'capitalizeWords' })).toBe('Thirty Two Thousand And One');
+  });
 });

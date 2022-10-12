@@ -6,4 +6,5 @@ export type Options = {
   lang?: Language;
   textTransform?: TextTransformProps;
   currencyUnit?: string;
+  commaSeparator?: boolean;
 }
