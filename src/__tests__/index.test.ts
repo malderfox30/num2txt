@@ -56,4 +56,12 @@ describe('num2txt tests', () => {
   test('should return value correctly 14', () => {
     expect(num2txt('32001', { lang: 'en', textTransform: 'capitalizeWords' })).toBe('Thirty Two Thousand And One');
   });
+
+  test('should return value correctly 15', () => {
+    expect(num2txt(32001, { lang: 'en', textTransform: 'capitalizeWords' })).toBe('Thirty Two Thousand And One');
+  });
+
+  test('should return value correctly 16', () => {
+    expect(num2txt(1000000, { lang: 'en' })).toBe('One million');
+  });
 });

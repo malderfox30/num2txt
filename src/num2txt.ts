@@ -9,7 +9,7 @@ const suffixes = ['', 'nghìn ', 'triệu ', 'tỷ ', 'nghìn tỷ ', 'triệu t
 
 const suffixesEng = ['', 'thousand ', 'million ', 'billion ', 'trillion ', 'quadrillion ', 'quintillion '];
 
-export function num2txt(value: string | number, options = defaultOptions) {
+export function num2txt(value: string | number, options = defaultOptions) : string {
   const customOptions = { ...defaultOptions, ...options };
   const triplets = [0, 0, 0, 0, 0, 0, 0];
   let isMoreThanAThousand;
@@ -66,6 +66,6 @@ export function num2txt(value: string | number, options = defaultOptions) {
     return transformText(outputString.trim(), customOptions?.textTransform);
   }
   catch (error) {
-    return error;
+    return (error as Error).message;
   }
 }

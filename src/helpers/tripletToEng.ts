@@ -41,7 +41,7 @@ export function tripletToEng(triplet: number, index: number, isMoreThanAThousand
   let isLessThanTwenty = false;
   let t = 100;
   let n = 0;
-  if (index >= TRIPLET_MAX_LENGTH - 1 && isMoreThanAThousand) {
+  if (index >= TRIPLET_MAX_LENGTH - 1 && isMoreThanAThousand && triplet > 0) {
     string += 'and ';
   }
   if (currentTriplet < 20) {

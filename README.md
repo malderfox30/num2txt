@@ -19,9 +19,9 @@ yarn add num2txt
 ```javascript
 import num2txt from 'num2txt'
 
-num2txt('32') // ba mươi hai
-num2txt('32', { lang: 'en' }) // thirty two
-num2txt('32000', { lang: 'vi', currencyUnit: 'đồng' }) // ba mươi hai nghìn đồng
+num2txt('32') // Ba mươi hai
+num2txt('32', { lang: 'en' }) // Thirty two
+num2txt('32000', { lang: 'vi', currencyUnit: 'đồng' }) // Ba mươi hai nghìn đồng
 num2txt('32000', { lang: 'vi', textTransform: 'capitalizeWords' }) // Ba Mươi Hai Nghìn
 num2txt('87654321', { lang: 'vi', commaSeparator: true }) // Tám mươi bảy triệu, sáu trăm năm mươi tư nghìn, ba trăm hai mươi mốt
 
