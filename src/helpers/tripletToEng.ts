@@ -51,7 +51,7 @@ export function tripletToEng(triplet: number, index: number, isMoreThanAThousand
   while (currentTriplet >= 1 && isLessThanTwenty === false) {
       n = Math.floor(currentTriplet / t);
       if (n > 0 && t === 100) {
-          string += unitNumbers[n] + 'hundred';
+          string += unitNumbers[n] + 'hundred ';
       }
       if (t == 10) {
           if (currentTriplet < 20) {
